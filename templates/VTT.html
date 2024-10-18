@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin-top: 125px;
+            text-align: center;
+        }
+        input{
+            font-size: medium;
+        }
+        #vid{
+            font-size: 20px;
+            margin-left: 105px;
+            margin-top: 25px;
+        }
+        #submit{
+            width: 100px;
+            height: 30px;
+            margin-top: 25px;
+            font-size: 20px;
+        }
+        #submit:hover{
+            cursor: pointer;
+        }
+        #output{
+            margin-left: 590px;
+            margin-top: 25px;
+            align-content: center;
+            text-align: center;
+            width: 350px;
+            height: 150px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Video-To-Text</title>
+</head>
+<body>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <h1>Video-To-Text</h1>
+        <input type="file" id="vid" name="video" accept="video/mp4" required>
+        <br>
+        <button type="submit" id="submit" name="sub">Submit</button>
+    </form>
+    {% if output %}
+        <h2 id="output">{{output}}</h2>
+    {% endif %}
+</body>
+</html>
